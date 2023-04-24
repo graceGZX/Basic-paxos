@@ -1,12 +1,14 @@
-# Basic-paxos
-基于cpp的basic-paxos编写
-+ 实现了多个节点之前对某个提案的共识
-+ 通过使用atomic，实现多线程中对变量的原子操作
+# paxos-cpp
+Toy implementation of Basic Paxos, on threads.
 
-编译
---------------
+Compiled like this:
+```
 g++ -std=c++11 -mcx16 *.cpp -lpthread -latomic -o paxos
+```
 
-运行
---------------------
+Fun demo, showing one round of Paxos, is run like this:
+```
 ./paxos
+```
+
+The implementation doesn't have a distinguished proposer (leader) - all proposers fight with each other to propose a random value. Majority of acceptors always end up agreeing on a single of these random values.
