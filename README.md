@@ -5,7 +5,6 @@
 编译
 ---------------
 g++ -std=c++11 -mcx16 *.cpp -lpthread -latomic -o paxos
-```
 
 运行
 ---------------
